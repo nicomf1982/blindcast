@@ -5,7 +5,7 @@ const twitterFetcher = require ('./TwitterFetcher')
 const facebookFetcher = require('./facebookFetcher')
 const path = require('path')
 const { facebook:fb, twitter:tw, reddit:rd } = require('./config/config')
-const dateFormatter = require('./aux/dateFormatter')
+
 
 const express = require ('express')
 app = express()
@@ -32,7 +32,7 @@ router.post('/getitall', async (req, res, next) => {
     // if (_rd.avaible) {
       const _fb = await facebookFetcher()
     // }
-    const all = dateFormatter([..._rd, ..._tw, ..._fb])
+    const all = [..._rd, ..._tw, ..._fb]
     return res
       .status(200)
       .type('json')
