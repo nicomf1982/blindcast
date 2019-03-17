@@ -1,0 +1,23 @@
+{
+  "name": "blindcast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nicomf1982 <nicomf1982@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "fb": "^2.0.0",
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
+    "reddit-wrapper-v2": "^1.1.5",
+    "twitter": "^1.7.1"
+  }
+}

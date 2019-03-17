@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>blindcast</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/blindcast.css" />
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <main role="main" class="container">
+    <style>
+    .blindcast{
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+      font-weight: 300;
+      font-size: 3rem;
+    }  
+    </style>
+
+    <h1 class="blindcast font-weight">blindcast</h1>
+
+    <div class="row">
+
+      <!-- voice & controls & cat & tagline & social -->
+      <div class="col">
+        
+        <!-- voice selection -->
+        <div class="row mt-3">
+          <div class="col">
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="voices">Choose a voice</label>
+                <select id="voices" class="form-control ml-3" onchange="onChangeVoice();"> </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      <!-- /voice selection -->
+
+        <!-- controls -->
+        <div class="row mt-3">
+          <div class="col">
+            <button class="btn  btn-block btn-success" onclick="play()"><i class="fa fa-play"></i> PLAY</button>
+          </div>
+          <div class="col">
+            <button class="btn  btn-block btn-warning"onclick="pause()"><i class="fa fa-pause"></i> PAUSE</button>
+          </div> 
+          <div class="col">
+            <button class="btn  btn-block btn-danger" onclick="cancel()"><i class="fa fa-stop"></i> STOP</button>
+          </div>
+        </div>
+        <!-- /controls -->
+
+        <!-- cat & tag & social -->
+        <div class="row mt-3">
+          <div class="col text-center">
+            
+            <!-- cat video -->
+            <video id="talking-cat" class="video-circle paused shadow-lg" width="300" height="300" loop muted>
+              <source src="/assets/talking-cat.mp4" type="video/mp4">
+              </source>
+              Oh snap! Your browser does not support this amazing video of a talking cat.
+            </video>
+            <!-- /cat video -->
+
+            <!-- tag line -->
+            <h3 class="font-weight-light font-italic">listen to your social media!</h3>
+            <!-- /tag line -->
+
+            <!-- social media buttons -->
+            <div class="row">
+              <div class="col">
+                <a href="#" class="btn btn-block btn-default fa fa-2x fa-facebook fa-facebook-bg"></a>
+              </div>
+              <div class="col">
+                <a href="#" class="btn btn-block btn-default fa fa-2x fa-twitter fa-twitter-bg"></a>
+              </div>
+              <div class="col">
+                <a href="#" class="btn btn-block btn-default fa fa-2x fa-reddit fa-reddit-bg"></a>
+              </div>
+            </div>
+            <!-- /social media buttons -->
+
+          </div>
+        </div>
+        <!-- /cat & tag & social -->
+
+    </div>
+    <!-- /voice & controls & cat & tagline & social -->
+
+    <!-- posts -->
+    <div class="col-6" id="posts"></div>
+    <!-- /posts -->
+
+  </div>
+  
+</main>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="speech.js"></script>
+</body>
+</html>

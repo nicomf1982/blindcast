@@ -1,0 +1,50 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.playing {
+  -webkit-filter: saturate(5); /* Safari 6.0 - 9.0 */
+  filter: saturate(5);
+}
+
+.paused {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.video-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.social-button {
+  width: 75px;
+}
+/* Facebook */
+.fa-facebook-bg {
+  background: #3b5998 !important;
+  color: white !important;
+}
+/* Twitter */
+.fa-twitter-bg {
+  background: #55acee !important;
+  color: white !important;
+}
+/* Reddit */
+.fa-reddit-bg {
+  background: #ff5700 !important;
+  color: white !important;
+}
+
+/* Facebook */
+.fa-facebook-color {
+  color: #3b5998 !important;
+}
+/* Twitter */
+.fa-twitter-color {
+  color: #55acee !important;
+}
+/* Reddit */
+.fa-reddit-bg-color {
+  color: #ff5700 !important;
+}
