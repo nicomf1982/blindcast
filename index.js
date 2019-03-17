@@ -5,6 +5,7 @@ const twitterFetcher = require ('./TwitterFetcher')
 const facebookFetcher = require('./facebookFetcher')
 const path = require('path')
 const { facebook:fb, twitter:tw, reddit:rd } = require('./config/config')
+const mockData = require('./mock')
 
 
 const express = require ('express')
@@ -15,6 +16,13 @@ const router = express.Router()
 
 router.get('/', (req, res, next) => {
   return res.sendFile(path.join(__dirname + '/index.html'));
+})
+
+/*********** Mocked payload */
+router.post('/data',  (req, res, next) => {
+  res.status(200)
+  res.type('json')
+  res.json(mockData)
 })
 
 /***********  All together */
