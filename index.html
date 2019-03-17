@@ -24,22 +24,38 @@
     }  
     </style>
 
-    <h1 class="blindcast font-weight">blindcast</h1>
+    <h1 class="blindcast font-weight"><i class="fa fa-2x fa-assistive-listening-systems" aria-hidden="true"></i> blindcast</h1>
 
     <div class="row">
 
       <!-- voice & controls & cat & tagline & social -->
       <div class="col">
         
-        <!-- voice selection -->
         <div class="row mt-3">
           <div class="col">
+            <!-- voice selection -->
             <form class="form-inline">
               <div class="form-group">
                 <label for="voices">Choose a voice</label>
                 <select id="voices" class="form-control ml-3" onchange="onChangeVoice();"> </select>
+                <a class="btn btn-default btn-xs" data-toggle="collapse" href="#settings-collapse" role="button" aria-expanded="false"><i class="fa fa-cog"></i></a>
               </div>
             </form>
+
+            <!-- settings -->
+            <div class="collapse" id="settings-collapse">
+              <div class="card card-body">
+                <label for="volume"><i class="fa fa-volume-up"></i> Volume</label>
+                <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
+                <label for="rate"><i class="fa fa-volume-up"></i> Rate</label>
+                <input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
+                <label for="pitch"><i class="fa fa-volume-up"></i> Pitch</label>
+                <input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="0.65">
+                <a class="btn btn-primary btn-xs"  data-toggle="collapse" href="#settings-collapse" onclick="onUpdateSettings()">Save settings...</a>
+              </div>
+              <div>
+              </div>
+            </div>
           </div>
         </div>
       <!-- /voice selection -->
@@ -96,7 +112,8 @@
     <!-- /voice & controls & cat & tagline & social -->
 
     <!-- posts -->
-    <div class="col-6" id="posts"></div>
+    <div class="col-6 pt-5" id="posts">
+    </div>
     <!-- /posts -->
 
   </div>
