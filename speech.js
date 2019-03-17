@@ -68,8 +68,8 @@ const resume = () => {
 
 const cancel = () => {
   synth.cancel();
-  posts = [];
-  $("#posts").empty();
+  //posts = [];
+  //$("#posts").empty();
   changeCatStatus(false);
 };
 
