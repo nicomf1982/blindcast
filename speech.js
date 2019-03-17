@@ -37,6 +37,12 @@ const onVoicesLoaded = () => {
   });
 };
 
+const onUpdateSettings = () => {
+  utteranceConfig.pitch = parseFloat($("#pitch").val());
+  utteranceConfig.range = parseFloat($("#range").val());
+  utteranceConfig.volume = parseFloat($("#volume").val());
+};
+
 const play = () => {
   if (!synthReady) {
     alert("Synth not ready!");
