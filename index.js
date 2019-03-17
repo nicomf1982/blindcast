@@ -6,12 +6,10 @@ const facebookFetcher = require('./facebookFetcher')
 const path = require('path')
 const { facebook:fb, twitter:tw, reddit:rd } = require('./config/config')
 const mockData = require('./mock')
-
-
 const express = require ('express')
 app = express()
 app.use(express.static('./'))
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {

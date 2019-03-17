@@ -2,13 +2,13 @@
 const config = require('./config/config').reddit
 const { username, password, app_id, api_secret, user_agent, filter_data } = config
 
-var RedditAPI = require('reddit-wrapper-v2');
+const RedditAPI = require('reddit-wrapper-v2');
 const {apiEndpointGetSubredddit} = config 
 let lastPost = new Date(93456789 * 1000);
 
 const _reddit = () => {
   return new Promise((resolve, reject) => {
-    var redditConn = new RedditAPI({
+    const redditConn = new RedditAPI({
       // Options for Reddit Wrapper
       username,
       password,
@@ -41,7 +41,7 @@ const _reddit = () => {
         if(filter_data){
           lastPost = sortedPost[0] ? new Date(sortedPost[0].createdAt * 1000): 0
         }
-        console.log(lastPost)
+        // console.log(lastPost)
         resolve(sortedPost)
       })
       .catch(function (err) {
