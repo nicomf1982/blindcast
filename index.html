@@ -63,13 +63,19 @@
         <!-- controls -->
         <div class="row mt-3">
           <div class="col">
-            <button class="btn  btn-block btn-success" onclick="play()"><i class="fa fa-play"></i> PLAY</button>
+            <button id="loading-button" class="btn btn-block btn-warning"><i class="fa fa-cog fa-spin"></i>
+            <span class="sr-only">Loading...</span> LOADING</button>
+            <button id="play-button" class="btn  btn-block btn-success" style="display:none;" onclick="play()"><i class="fa fa-play"></i> PLAY</button>
           </div>
+          <!--
           <div class="col">
             <button class="btn  btn-block btn-warning"onclick="pause()"><i class="fa fa-pause"></i> PAUSE</button>
-          </div> 
+          </div>
+          -->
           <div class="col">
-            <button class="btn  btn-block btn-danger" onclick="cancel()"><i class="fa fa-stop"></i> STOP</button>
+            <button id="play-asdasd" class="btn  btn-block btn-success" style="display:none;" onclick="play()"><i
+                class="fa fa-play"></i> PLAY</button>
+            <button id="stop-button" class="btn  btn-block btn-danger" onclick="cancel()"><i class="fa fa-stop"></i> STOP</button>
           </div>
         </div>
         <!-- /controls -->

@@ -2,16 +2,8 @@ const socialMedias = {};
 
 $(document).ready(function() {
   setupCatVideo();
-  getPosts.fromReddit();
-  const foo = function() {
-    const Http = new XMLHttpRequest();
-    const url = "https://jsonplaceholder.typicode.com/posts";
-    Http.open("GET", url);
-    Http.send();
-    Http.onreadystatechange = e => {
-      console.log(Http.responseText);
-    };
-  };
+
+  getPosts.custom();
 });
 
 const setupCatVideo = () => {
@@ -42,6 +34,9 @@ const getPosts = {
           post.src = "reddit";
           posts.push(post);
         });
+        console.log(posts);
+        $("#loading-button").css("display", "none");
+        $("#play-button").show();
       })
       .catch(error => {
         console.log(error);
@@ -59,6 +54,36 @@ const getPosts = {
           post.src = "twitter";
           posts.push(post);
         });
+        console.log(posts);
+        $("#loading-button").css("display", "none");
+        $("#play-button").show();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+
+  custom: () => {
+    const url = `/data`;
+    fetch(url, { method: "POST" })
+      .then(response => {
+        return response.json();
+      })
+      .then(response => {
+        response.forEach(post => {
+          posts.push(post);
+        });
+        posts = posts.sort((a, b) => {
+          console.log(
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+        });
+        console.log(posts);
+        $("#loading-button").css("display", "none");
+        $("#play-button").show();
       })
       .catch(error => {
         console.log(error);

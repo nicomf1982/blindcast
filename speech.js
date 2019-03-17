@@ -3,11 +3,12 @@ var posts = [];
 var voices = [];
 var synthReady = false;
 var utteranceConfig = {
-  rate: 1,
+  rate: 1.2,
   pitch: 0.65,
   volume: 1,
   voice: 0
 };
+var status = "PLAY";
 
 console.log("Waiting for speechSynthesis...");
 synth.onvoiceschanged = function() {
@@ -62,19 +63,28 @@ const pause = () => {
 };
 
 const resume = () => {
+  status == "PLAY";
   synth.resume();
   changeCatStatus(true);
 };
 
 const cancel = () => {
   synth.cancel();
-  posts = [];
-  $("#posts").empty();
+  status == "STOP";
+  //posts = [];
+  //$("#posts").empty();
   changeCatStatus(false);
 };
 
 const postToUtterance = post => {
-  var utterance = new SpeechSynthesisUtterance(post.msj);
+  let mensaje = post.msj
+    .split("#")
+    .join("hastag")
+    .split(" q ")
+    .join("que")
+    .split(" x ")
+    .join("por");
+  var utterance = new SpeechSynthesisUtterance(mensaje);
   utterance.voice = voices[utteranceConfig.voice];
   utterance.rate = utteranceConfig.rate;
   utterance.pitch = utteranceConfig.pitch;
@@ -83,15 +93,20 @@ const postToUtterance = post => {
 };
 
 const dequeue = () => {
+  if (status == "STOP") {
+    return;
+  }
   pause();
   if (posts.length > 0 && !synth.paused) {
     let post = posts.shift();
     let time = new Date(post.createdAt).toISOString();
 
+    $("#posts div").hide("slow");
+
     $("#posts").prepend(`
     <div class="row">
       <div class="col text-right">
-        <i class="fa fa-2x fa-${post.src} fa-${post.src}-color"></i>
+        <i class="fa fa-2x fa-${post.plataform} fa-${post.plataform}-color"></i>
       </div>
       <div class="col-8">
         <div class="media text-muted pt-3">
@@ -107,7 +122,9 @@ const dequeue = () => {
     let utterance = postToUtterance(post);
     utterance.onend = dequeue;
     setTimeout(() => {
-      resume();
+      if (status != "STOP") {
+        resume();
+      }
     }, 500);
     synth.speak(utterance);
   }
