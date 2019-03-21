@@ -65,17 +65,17 @@
           <div class="col">
             <button id="loading-button" class="btn btn-block btn-warning"><i class="fa fa-cog fa-spin"></i>
             <span class="sr-only">Loading...</span> LOADING</button>
-            <button id="play-button" class="btn  btn-block btn-success" style="display:none;" onclick="play()"><i class="fa fa-play"></i> PLAY</button>
+            <button id="play-button" class="btn  btn-block btn-success" style="display:none;" onclick="update()"><i class="fa fa-play"></i> PLAY</button>
           </div>
-          <!--
+          
           <div class="col">
-            <button class="btn  btn-block btn-warning"onclick="pause()"><i class="fa fa-pause"></i> PAUSE</button>
+            <button id="next-button" disabled="true" class="btn  btn-block btn-primary"onclick="cancel()"><i class="fa fa-step-forward"></i> NEXT</button>
           </div>
-          -->
+         
           <div class="col">
-            <button id="play-asdasd" class="btn  btn-block btn-success" style="display:none;" onclick="play()"><i
-                class="fa fa-play"></i> PLAY</button>
-            <button id="stop-button" class="btn  btn-block btn-danger" onclick="cancel()"><i class="fa fa-stop"></i> STOP</button>
+            <!-- <button id="play-asdasd" class="btn  btn-block btn-success" style="display:none;" onclick="play()"><i
+                class="fa fa-play"></i> PLAY</button> -->
+            <button id="stop-button" disabled="true" style=" border-top-width: 0px; margin-top: 8px; "class="btn  btn-block btn-danger" onclick="pause()"><i class="fa fa-stop"></i> STOP</button>
           </div>
         </div>
         <!-- /controls -->

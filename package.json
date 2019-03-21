@@ -11,7 +11,6 @@
   "author": "Nicomf1982 <nicomf1982@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "fb": "^2.0.0",

@@ -74,9 +74,9 @@ const getPosts = {
           posts.push(post);
         });
         posts = posts.sort((a, b) => {
-          console.log(
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-          );
+          // console.log(
+          //   new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          // );
           return (
             new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
           );
